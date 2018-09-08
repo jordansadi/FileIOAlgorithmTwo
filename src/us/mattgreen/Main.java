@@ -87,7 +87,6 @@ public class Main {
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (Double.parseDouble(lines.get(j)[4]) > Double.parseDouble(lines.get(j + 1)[4])) {
-                    // swap temp and arr[i]
                     String[] temp = lines.get(j);
                     lines.set(j, lines.get(j + 1));
                     lines.set(j + 1, temp);

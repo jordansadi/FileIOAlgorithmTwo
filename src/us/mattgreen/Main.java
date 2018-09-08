@@ -29,7 +29,10 @@ public class Main {
         outFile.fileClose();
         sortFile("output.csv");
 
-        System.out.println("\nRating Count");
+        // average ratings were counted rather than individual ratings because individual ratings were never printed
+        // in the previous exercise, and the instructions specified that the output file should include all fields
+        // that were printed out in the previous exercise
+        System.out.println("\nCount of Average Ratings");
         System.out.println("0   " + ratingCounter(0));
         System.out.println("1   " + ratingCounter(1));
         System.out.println("2   " + ratingCounter(2));

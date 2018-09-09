@@ -5,13 +5,20 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
+/**
+ * This is the driver class for the FileIOAlgorithmTwo package.
+ * It reads multiple files and prints the ID, name, number of movies seen, number of points,
+ * and average movie rating for each person.
+ * It then prints the number of average ratings that fall within each point in the rating scale.
+ * Created by jsadi on 9/8/2018.
+ * @author Jordan Sadi
+ * @version 2018 0908 .3
+ */
 public class Main {
 
     private final static FileInput cardAccts = new FileInput("movie_cards.csv");
     private final static FileOutput outFile = new FileOutput("output.csv");
-    private static Scanner keyboard = new Scanner(System.in);
 
     public static void main(String[] args) {
         String line;
@@ -41,6 +48,11 @@ public class Main {
         System.out.println("5   " + ratingCounter(5));
     }
 
+    /**
+     * This method reads a file to get the average movie rating for a specified person.
+     * @param acct the account number to find the average movie rating for.
+     * @param dubs a double array that is used to store the number of ratings, total rating points, and average rating.
+     */
     public static void getAvgRating(String acct, double[] dubs) {
         dubs[0] = 0;
         dubs[1] = 0;
@@ -62,6 +74,13 @@ public class Main {
 
         }
     }
+
+    /**
+     * This file reads and sorts a specified file.
+     * @param fileName the name of the file to be sorted.
+     * @throws FileNotFoundException if the specified file cannot be found or opened.
+     * @throws Exception if the file cannot be read.
+     */
     public static void sortFile(String fileName) {
         BufferedReader fileIn = null;
         try {
@@ -109,6 +128,11 @@ public class Main {
         sortedFile.fileClose();
     }
 
+    /**
+     * This method finds the number of purchases and total number of points for a specified accouht.
+     * @param acct the account for which the number of purchases will be found.
+     * @param nums an in array in which the number of purchases and total points will be stored.
+     */
     public static void findPurchases(String acct, int[] nums) {
         nums[0] = 0;
         nums[1] = 0;
@@ -135,6 +159,11 @@ public class Main {
         }
     }
 
+    /**
+     * This method counts the number of average ratings that start with a specified integer.
+     * @param i the specified first numbber of the reviews to look for.
+     * @return the number of average ratings that begin with the specified number.
+     */
     public static int ratingCounter(int i) {
         FileInput sortedIn = new FileInput("output.csv");
         String line;

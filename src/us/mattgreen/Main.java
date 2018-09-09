@@ -50,7 +50,7 @@ public class Main {
 
     /**
      * This method reads a file to get the average movie rating for a specified person.
-     * @param acct the account number to find the average movie rating for.
+     * @param acct String of the account number to find the average movie rating for.
      * @param dubs a double array that is used to store the number of ratings, total rating points, and average rating.
      */
     public static void getAvgRating(String acct, double[] dubs) {
@@ -77,7 +77,7 @@ public class Main {
 
     /**
      * This file reads and sorts a specified file.
-     * @param fileName the name of the file to be sorted.
+     * @param fileName String name of the file to be sorted.
      * @throws FileNotFoundException if the specified file cannot be found or opened.
      * @throws Exception if the file cannot be read.
      */
@@ -130,8 +130,8 @@ public class Main {
 
     /**
      * This method finds the number of purchases and total number of points for a specified accouht.
-     * @param acct the account for which the number of purchases will be found.
-     * @param nums an in array in which the number of purchases and total points will be stored.
+     * @param acct String of the account for which the number of purchases will be found.
+     * @param nums an int array in which the number of purchases and total points will be stored.
      */
     public static void findPurchases(String acct, int[] nums) {
         nums[0] = 0;
@@ -161,8 +161,8 @@ public class Main {
 
     /**
      * This method counts the number of average ratings that start with a specified integer.
-     * @param i the specified first numbber of the reviews to look for.
-     * @return the number of average ratings that begin with the specified number.
+     * @param i int that specifies the first numbber of the reviews to look for.
+     * @return int of the number of average ratings that begin with the specified number.
      */
     public static int ratingCounter(int i) {
         FileInput sortedIn = new FileInput("output.csv");
